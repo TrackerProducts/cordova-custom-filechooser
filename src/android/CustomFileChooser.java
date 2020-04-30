@@ -38,6 +38,8 @@ public class CustomFileChooser extends CordovaPlugin {
 
         if (mimeTypes.length > 0) {
             intent.setType(mimeTypes[0]);
+        } else {
+            intent.setType("*/*");
         }
 
         if (mimeTypes.length > 1) {

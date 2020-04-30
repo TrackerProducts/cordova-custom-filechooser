@@ -1,6 +1,6 @@
 module.exports = {
     open: function (type, allowMultiple, success, failure) {
-        if (!type) type = '';
+        if (!type) type = '*/*';
 
         allowMultiple = !!allowMultiple;
 
