@@ -32,9 +32,12 @@ public class CustomFileChooser extends CordovaPlugin {
         String[] mimeTypes = type.split(",");
         boolean allowMultiple = Boolean.parseBoolean(allowMultipleString);
 
-        intent.setType("file/*");
         for (int i = 0; i < mimeTypes.length; i++) {
             mimeTypes[i] = mimeTypes[i].trim();
+        }
+
+        if (mimeTypes.length > 0) {
+            intent.setType(mimeTypes[0]);
         }
 
         if (mimeTypes.length > 1) {
